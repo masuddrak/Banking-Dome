@@ -1,10 +1,26 @@
 // deposite
 document.getElementById('diposittBtn').addEventListener('click',function(){
-    const withdrawInput=document.getElementById('depositInput');
-    const depositAmount=withdrawInput.value;
+    const depositInput=document.getElementById('depositInput');
+    const newDepositAmount=parseFloat(depositInput.value);
     
     const totalDiposit=document.getElementById('totalDiposit');
-    totalDiposit.innerText=depositAmount
+    const previousDepositAmount=parseFloat(totalDiposit.innerText);
+    const newDepositeTotal=newDepositAmount+previousDepositAmount;
+    totalDiposit.innerText=newDepositeTotal;
+    // update blance
+    const totalBlance=document.getElementById('totalBlance');
+    const previusDepositBlence=parseFloat(totalBlance.innerText);
+    const newDepositBlence=newDepositAmount+previusDepositBlence;
+    totalBlance.innerText=newDepositBlence;
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // clear 
-    withdrawInput.value=''
+    depositInput.value=''
 })
